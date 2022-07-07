@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+    <form [formGroup]="loginForm" (ngSubmit)="logUser()">
+   
+                <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Enter Your Username</label>
+                    <input type="text" class="form-control" placeholder="userName" formControlName="user">
+                    <span style="color:red;" *ngIf="user&&user.invalid&&user.touched">This input field is not valid</span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Enter Your Password</label>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="pass">
+                    <span style="color:red;" *ngIf="pass&&pass.invalid&&pass.touched" >This password field is not valid</span>
+                </div>
+     
+                <button class="btn btn-primary" [disabled]="loginForm.invalid">Submit</button>
+               
+       
+    </form>
+    </div>
+</div>
+</div>

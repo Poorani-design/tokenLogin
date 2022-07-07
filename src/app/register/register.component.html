@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5 offset-md-3">
+            <form [formGroup]="registerForm" (ngSubmit)="regUser()">
+             <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Enter Your Username</label>
+                    <input type="text" class="form-control" placeholder="userName" formControlName="user">
+                    <span style="color:red;" *ngIf="user&&user.invalid&&user.touched">This input field is not
+                        valid</span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputName" class="form-label">Enter Your mail ID</label>
+                    <input type="email" class="form-control" placeholder="userName" formControlName="email">
+                    <span style="color:red;" *ngIf="email&&email.invalid&&email.touched">This input field is not
+                        valid</span>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Enter Your Password</label>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="pass">
+                    <span style="color:red;" *ngIf="pass&&pass.invalid&&pass.touched">This password field is not
+                        valid</span>
+                </div>
+               
+                <div class="mb-3">
+                    <label for="exampleInputEmail" class="form-label">Enter Your Confirm Password</label>
+                    <input type="password" class="form-control" placeholder="Password" formControlName="confirmpass">
+                    <span style="color:red;" *ngIf="confirmpass&&confirmpass.invalid&&confirmpass.touched">This password field is not
+                        valid</span>
+                </div>
+               <a >
+                <button class="btn btn-primary" [disabled]="registerForm.invalid">Submit</button>
+               </a>
+
+            </form>
+        </div>
+    </div>
+</div>
